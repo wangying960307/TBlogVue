@@ -19,7 +19,7 @@ module.exports = {
         proxy: {
             '/api': {
                 // target: ' https://www.easy-mock.com/mock/5c2af2c68b1b183c2bda4f06/api',
-                target: 'http://localhost/tblog/api',
+                target: 'http://www.tblog.cn/api',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {
