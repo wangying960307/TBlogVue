@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-card>
+        <el-card >
             <h2>{{item.title}}</h2>
             <el-row>
                 <el-col :lg="4" >

@@ -5,13 +5,13 @@
                     :item="item"
             ></article-item>
             <br>
-            <el-pagination-plus
-                    style="justify-content: center"
-                    :page="page"
-                    @refresh="loadItems"
-                    @change="pageChange"
-            ></el-pagination-plus>
         </div>
+        <el-pagination-plus
+                style="justify-content: center"
+                :page="page"
+                @refresh="loadItems"
+                @change="pageChange"
+        ></el-pagination-plus>
     </el-card>
 </template>
 
