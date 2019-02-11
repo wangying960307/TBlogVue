@@ -26,3 +26,11 @@ export function ArticleStar (id) {
     method: 'get',
   })
 }
+
+
+export function ArticleGetGroupTree() {
+  return request({
+    url: '/article/getGroupTree',
+    method: 'get',
+  })
+}

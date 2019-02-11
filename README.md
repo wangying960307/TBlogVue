@@ -19,13 +19,30 @@
 |
 |-- 音乐模块
 | 
-|--微博模块（对外隐藏）
+|-- 微博模块（对外隐藏）
 | |-- 增、删、查、改（完成）
 | |-- 从内容中抽取标签
 | |-- 自定义标签
+|
 ~~~
 
 ## 博客关联开源项目
 [博客前端](https://github.com/GtGuiZhou/TBlogVue)
 [博客管理前端](https://github.com/GtGuiZhou/TBlogAdminVue)
 [博客后台(php)](https://github.com/GtGuiZhou/TBlog)
+
+## 2019年02月12日00:44:48
+因为vue.config.js是从d2admin那边copy过来的，今天才发现他自己导入了自己定义的scss文件，平时用不到的时候没关系，
+今天因为使用了d2admin的markdown发现scss出现问题，才发现没有把d2admin根目录下的assets/style/public.scss文件也拷贝过来
+导致无法使用markdown引起的编译错误
+~~~
+//vue.config.js关于scss的配置
+css: {
+        loaderOptions: {
+            // 设置 scss 公用变量文件
+            sass: {
+                data: `@import '~@/assets/style/public.scss';`
+            }
+        }
+    },
+~~~

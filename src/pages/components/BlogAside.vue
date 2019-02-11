@@ -9,6 +9,14 @@
             ></aplayer>
         </el-card>
         <br>
+        <el-card>
+            <el-tree-plus
+                    placeholder="搜索"
+                    v-model="group_path"
+                    :data="article_tree"
+            ></el-tree-plus>
+        </el-card>
+        <br>
         <el-card class="tags">
             <el-tag @click="$router.push('/search/' + tag)"
                     class="tag"
@@ -48,16 +56,21 @@
 
     import Aplayer from 'vue-aplayer'
     import { BlogAsideMusicConfig, BlogAsideTagsConfig } from '../../api/sys.config'
+    import ElTreePlus from './el-tree-plus/index'
+    import { ArticleGetGroupTree } from '../../api/page.article'
 
     export default {
         name: 'BlogAside',
         components: {
+            ElTreePlus,
             Aplayer
         },
         data () {
             return {
                 musics: [],
-                tags: []
+                tags: [],
+                group_path: '',
+                article_tree: []
             }
         },
         created () {
@@ -69,7 +82,13 @@
 
             BlogAsideMusicConfig().then(
                 res => {
-                    this.musics = res
+                    this.musics = res.value
+                }
+            )
+
+            ArticleGetGroupTree().then(
+                res => {
+                    this.article_tree = res
                 }
             )
         },

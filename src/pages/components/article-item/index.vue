@@ -2,17 +2,7 @@
     <div>
         <el-card >
             <h2>{{item.title}}</h2>
-            <el-row>
-                <el-col :lg="4" >
-                    <img v-if="item.cover" :src="item.cover" width="150px">
-                </el-col>
-                <el-col :lg="18" >
-                        <span class="article-content"
-                              v-html="item.content">
-                        </span>
-                </el-col>
-            </el-row>
-
+            <d2-markdown :source="item.content"></d2-markdown>
             <el-row >
                 <el-col :lg="18" >
                     <gray-small>创建时间{{item.update_time}}</gray-small>
@@ -31,8 +21,11 @@
 </template>
 
 <script>
+    import GraySmall from '../gray-small/index'
+    import D2Markdown from '../d2-markdown/index'
     export default {
         name: 'ArticleItem',
+        components: { D2Markdown, GraySmall },
         props: {
             item: {
                 type: Object,
@@ -40,7 +33,6 @@
                     return {
                         title: '',
                         star_num: 0,
-                        cover: '',
                         content: ''
                     }
                 }

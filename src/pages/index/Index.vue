@@ -2,12 +2,12 @@
     <div>
         <el-row :gutter="20">
             <el-col :lg="18">
-                <blog-header></blog-header>
-                <br>
-                <blog-content></blog-content>
+                <!--<blog-header style="background-color: rgba(255, 255, 255, 0.9);"></blog-header>-->
+                <!--<br>-->
+                <blog-content style="background-color: rgba(255, 255, 255, 0.9);"></blog-content>
             </el-col>
             <el-col :lg="6">
-                <blog-aside></blog-aside>
+                <blog-aside style="background-color: rgba(255, 255, 255, 0.9);"></blog-aside>
             </el-col>
         </el-row>
         <blog-footer></blog-footer>

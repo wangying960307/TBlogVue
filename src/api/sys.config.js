@@ -16,7 +16,7 @@ export function BlogAsideTagsConfig () {
 
 export function BlogAsideMusicConfig () {
     return request({
-        url: '/sys/config/AsideMusic',
+        url: '/sysconfig/read/music',
         method: 'get'
     })
 }
